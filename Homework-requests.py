@@ -30,11 +30,6 @@ class YandexDisk():
             'Content-Type':'application/json',
             'Authorization': 'OAuth {}'.format(self.token)
         }
-    def get_files_list(self):
-        url = "https://cloud-api.yandex.net/v1/disk/resources/files"
-        headers = self.get_headers()
-        response = requests.get(url,headers=headers)
-        return response.json()
     
     def _upload_file_link(self,path_to_file):
         upload_url = "https://cloud-api.yandex.net/v1/disk/resources/upload"
